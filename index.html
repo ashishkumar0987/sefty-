@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Safety Day 2026 - Complete Industry Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hindi:wght@400;600;800&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #b71c1c; --secondary: #ff6f00; --dark: #1a237e; --light: #f4f6f8;
+            --success: #2e7d32; --women: #880e4f; --electric: #fbc02d; --chem: #00695c;
+            --welder: #37474f; --grinder: #6d4c41; --nasha: #d32f2f; --phone: #455a64;
+        }
+        body { font-family: 'Roboto', 'Noto Sans Hindi', sans-serif; margin: 0; background: #eceff1; color: #333; line-height: 1.7; }
+
+        /* --- GRAND HEADER --- */
+        header { 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('one.jpeg'); 
+            background-size: cover; 
+            background-position: center center; 
+            background-repeat: no-repeat;
+            color: white; 
+            padding: 80px 20px; 
+            text-align: center; 
+            border-bottom-left-radius: 60px; 
+            border-bottom-right-radius: 60px; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4); 
+        }
+        .year-badge { background: var(--secondary); padding: 10px 30px; border-radius: 50px; font-size: 1.5rem; font-weight: bold; display: inline-block; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(255, 111, 0, 0.5); }
+        header h1 { margin: 0; font-size: 3.5rem; text-shadow: 3px 3px 0px #000; letter-spacing: 2px; font-weight: 800; }
+        header .sub-title { font-size: 1.8rem; margin-top: 15px; font-weight: 300; color: #ffcc80; }
+
+        /* --- CONTAINER & GRID --- */
+        .container { max-width: 1500px; margin: 50px auto; padding: 0 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+
+        /* --- ADVANCED CARDS --- */
+        .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.15); cursor: pointer; transition: 0.4s ease; position: relative; border: 1px solid #e0e0e0; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0,0,0,0.25); }
+        
+        .card-img { height: 220px; width: 100%; object-fit: cover; }
+        .card-content { padding: 25px; position: relative; }
+        .card-badge { position: absolute; top: -25px; right: 25px; background: var(--dark); color: white; padding: 12px 20px; border-radius: 10px; font-weight: bold; font-size: 1.1rem; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        
+        .card-title { font-size: 1.6rem; margin: 10px 0; color: var(--dark); font-weight: 700; }
+        .card-desc { font-size: 0.95rem; color: #555; margin-bottom: 15px; }
+
+        /* --- MODAL POPUP --- */
+        .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); overflow-y: auto; animation: fadeIn 0.3s; }
+        .modal-content { background: white; margin: 30px auto; width: 95%; max-width: 1200px; border-radius: 25px; overflow: hidden; position: relative; animation: slideDown 0.5s; }
+        
+        .modal-header { background: var(--dark); color: white; padding: 30px; display: flex; align-items: center; justify-content: space-between; }
+        .modal-header h2 { margin: 0; font-size: 2rem; font-weight: 700; }
+        .close-btn { font-size: 50px; cursor: pointer; color: white; transition: 0.3s; line-height: 1; }
+        .close-btn:hover { color: var(--secondary); transform: rotate(90deg); }
+
+        .modal-body { padding: 40px; display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; background: #fcfcfc; }
+        @media (max-width: 900px) { .modal-body { grid-template-columns: 1fr; } }
+
+        .video-container { position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.2); border: 5px solid white; background: #000; }
+        .video-container iframe { width: 100%; height: 350px; border: none; display: block; }
+        
+        /* LOCAL VIDEO STYLING (NEW ADDITION) */
+        #local-video { width: 100%; height: 350px; background: #000; display: block; border-radius: 10px; }
+
+        .content-block { background: white; padding: 25px; border-radius: 15px; margin-bottom: 25px; border-left: 6px solid var(--primary); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .content-block.english { border-left-color: var(--dark); background: #f5f7fa; }
+        
+        .block-title { font-size: 1.4rem; color: var(--primary); margin-top: 0; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+        .content-block.english .block-title { color: var(--dark); }
+        
+        .checklist { list-style: none; padding: 0; }
+        .checklist li { padding: 12px; border-bottom: 1px solid #eee; display: flex; align-items: flex-start; }
+        .checklist li:last-child { border-bottom: none; }
+        .checklist li:before { content: '✔️'; margin-right: 10px; font-size: 1.2rem; }
+
+        .warning-box { background: #fff3e0; border-left: 5px solid #ff9800; padding: 15px; margin-top: 15px; border-radius: 8px; }
+        
+        .data-table { width: 100%; border-collapse: collapse; margin-top: 15px; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .data-table th { background: var(--dark); color: white; padding: 15px; font-size: 1rem; text-align: left; }
+        .data-table td { padding: 12px 15px; border: 1px solid #ddd; background: white; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideDown { from { transform: translateY(-100px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+        footer { background: var(--dark); color: white; text-align: center; padding: 30px; margin-top: 50px; font-size: 1.1rem; border-top: 5px solid var(--secondary); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="year-badge">📅 सुरक्षा दिवस 2026 (Safety Day 2026)</div>
+        <h1>सुरक्षा का संकल्प, जीवन का विकास</h1>
+        <div class="sub-title">Safety Commitment for Development</div>
+    </header>
+
+    <div class="container">
+        <div style="text-align:center; margin-bottom:40px;">
+            <h2 style="color: var(--dark); font-size: 2rem;">विस्तृत सुरक्षा मार्गदर्शिका (Detailed Safety Guide)</h2>
+        </div>
+
+        <div class="grid">
+            <!-- 1. FIRE -->
+            <div class="card fire-card" onclick="openModal('fire')">
+                <div class="card-badge" style="background:var(--primary);">🔥 अग्नि</div>
+                <img class="card-img" src="three.jpg" alt="Fire Safety">
+                <div class="card-content"><h2 class="card-title">अग्नि सुरक्षा (Fire Safety)</h2></div>
+            </div>
+
+            <!-- 2. WOMEN -->
+            <div class="card women-card" onclick="openModal('women')">
+                <div class="card-badge" style="background:var(--women);">👩‍💼 महिला</div>
+                <img class="card-img" src="Blog--05_2048x2048.webp" alt="Women Safety">
+                <div class="card-content"><h2 class="card-title">महिला सुरक्षा (Women Safety)</h2></div>
+            </div>
+
+            <!-- 3. WELDER -->
+            <div class="card" onclick="openModal('welder')" style="border-top: 5px solid var(--welder);">
+                <div class="card-badge" style="background:var(--welder);">🛡️ वेल्डर</div>
+                <img class="card-img" src="two.jpeg" alt="Welder Safety">
+                <div class="card-content"><h2 class="card-title">वेल्डर सुरक्षा</h2></div>
+            </div>
+
+            <!-- 4. GRINDER -->
+            <div class="card" onclick="openModal('grinder')" style="border-top: 5px solid var(--grinder);">
+                <div class="card-badge" style="background:var(--grinder);">⚙️ ग्राइंडर</div>
+                <img class="card-img" src="WhatsApp Image 2026-03-08 at 4.15.05 PM.jpeg" alt="Grinder Safety">
+                <div class="card-content"><h2 class="card-title">ग्राइंडर सुरक्षा</h2></div>
+            </div>
+
+            <!-- 5. HELPER -->
+            <div class="card" onclick="openModal('helper')" style="border-top: 5px solid var(--success);">
+                <div class="card-badge" style="background:var(--success);">👷 हेल्पर</div>
+                <img class="card-img" src="WhatsApp Image 2026-03-08 at 4.28.54 PM.jpeg" alt="Helper Safety">
+                <div class="card-content"><h2 class="card-title">हेल्पर सुरक्षा</h2></div>
+            </div>
+
+            <!-- 6. MOBILE BAN -->
+            <div class="card" onclick="openModal('mobile')" style="border-top: 5px solid var(--phone);">
+                <div class="card-badge" style="background:var(--phone);">📵 मोबाइल</div>
+                <img class="card-img" src="gettyimages-533228722-612x612.jpg" alt="Mobile Phone">
+                <div class="card-content"><h2 class="card-title">मोबाइल वर्जित</h2></div>
+            </div>
+
+            <!-- 7. NASHA MUKTI -->
+            <div class="card" onclick="openModal('nasha')" style="border-top: 5px solid var(--nasha);">
+                <div class="card-badge" style="background:var(--nasha);">🚭 नशा</div>
+                <img class="card-img" src="glass-whiskey-two-cigarettes-on-260nw-280869077.webp" alt="No Smoking">
+                <div class="card-content"><h2 class="card-title">नशा मुक्ति</h2></div>
+            </div>
+
+            <!-- 8. PPE & HEIGHT -->
+            <div class="card" onclick="openModal('ppe')" style="border-top: 5px solid var(--secondary);">
+                <div class="card-badge" style="background:var(--secondary);">⛑️ पीपीई</div>
+                <img class="card-img" src="WhatsApp Image 2026-03-08 at 4.22.05 PM.jpeg" alt="PPE">
+                <div class="card-content"><h2 class="card-title">पीपीई और ऊंचाई</h2></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MODAL POPUP -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Title</h2>
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="video-section">
+                    <h3 style="margin-top:0;">🎬 वीडियो गाइड</h3>
+                    <div class="video-container">
+                        <!-- YouTube Container -->
+                        <iframe id="video-frame" style="display:none;" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        
+                        <!-- Local File Container (NEW) -->
+                        <video id="local-video" controls style="display:none;">
+                            <source id="video-source" src="" type="video/mp4">
+                            आपका ब्राउज़र वीडियो सपोर्ट नहीं करता।
+                        </video>
+                    </div>
+                    <div class="warning-box">
+                        <strong>⚠️ नोट:</strong> वीडियो चलाने के लिए Play बटन दबाएं।
+                    </div>
+                </div>
+                <div class="info-section" id="info-area"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 सुरक्षा दिवस अभियान | "सुरक्षा का पालन, जीवन का संजीवन"</p>
+    </footer>
+
+    <script>
+        // --- DATA ENGINE ---
+        // NOTE: 'video' में अपनी फाइल का नाम (जैसे fire.mp4) डालें। 
+        // फाइल उसी फोल्डर में होनी चाहिए जहाँ यह HTML फाइल है।
+        
+        const data = {
+            'fire': {
+                title: "🔥 अग्नि सुरक्षा (Fire Safety)",
+                video: "12730657-hd_1080_1920_30fps.mp4", // <-- यहाँ अपनी फाइल का नाम डालें
+                html: `<div class="content-block"><h3 class="block-title">🇮🇳 हिंदी में जानकारी</h3><p>आग के प्रकार और सिलेंडर का रंग कोड। Class A (लकड़ी) - लाल पानी, Class C (बिजली) - काला CO2।</p></div><div class="content-block english"><h3 class="block-title">🇺🇸 English Info</h3><p>Know your fire types. Never use water on electrical fires.</p></div>`
+            },
+            'women': {
+                title: "👩‍💼 महिला सुरक्षा (Women Safety)",
+                video: "147214-791333978_medium.mp4", // <-- यहाँ अपनी फाइल का नाम डालें
+                html: `<div class="content-block"><h3 class="block-title">🇮🇳 कानूनी अधिकार</h3><p>POSH Act, ICC Committee और सुरक्षित परिवहन के नियम।</p></div><div class="content-block english"><h3 class="block-title">🇺🇸 Legal Rights</h3><p>Workplace safety and harassment laws.</p></div>`
+            },
+            'welder': {
+                title: "🛡️ वेल्डर सुरक्षा (Welder Safety)",
+                video: "welder-video.mp4", // <-- यहाँ अपनी फाइल का नाम डालें
+                html: `<div class="content-block"><h3 class="block-title">🇮🇳 वेल्डिंग के खतरे</h3><ul class="checklist"><li><strong>गॉगल्स:</strong> आंखों को चमक से बचाएं।</li><li><strong>दस्ताने:</strong> चमड़े के दस्ताने पहनें।</li></ul></div><div class="content-block english"><h3 class="block-title">🇺🇸 Welding Hazards</h3><p>Use correct shade goggles and leather gloves.</p></div>`
+            },
+            'grinder': {
+                title: "⚙️ ग्राइंडर सुरक्षा (Grinder Safety)",
+                video: "grinder-video.mp4", // <-- यहाँ अपनी फाइल का नाम डालें
+                html: `<div class="content-block"><h3 class="block-title">🇮🇳 ग्राइंडर नियम</h3><ul class="checklist"><li><strong>Ring Test:</strong> पहिया चेक करें।</li><li><strong>Guard:</strong> गार्ड लगाएं।</li></ul></div><div class="content-block english"><h3 class="block-title">🇺🇸 Grinder Rules</h3><p>Check wheel for cracks and use guards.</p></div>`
+            },
+            'helper': {
+                title: "👷 हेल्पर सुरक्षा (Helper Safety)",
+                video: "helper-video.mp4", // <-- यहाँ अपनी फाइल का नाम डालें
+                html: `<div class="content-block"><h3 class="block-title">🇮🇳 हेल्पर की जिम्मेदारियां</h3><ul class="checklist"><li>घुटनों से झुककर वजन उठाएं।</li><li>काम की जगह साफ रखें।</li></ul></div><div class="content-block english"><h3 class="block-title">🇺🇸 Helper Duties</h3><p>Safe lifting techniques and housekeeping.</p></div>`
+            },
+            'mobile': {
+                title: "📵 मोबाइल वर्जित (Mobile Phone Ban)",
+                video: "mobile-ban.mp4", // <-- यहाँ अपनी फाइल का नाम डालें
+                html: `<div class="content-block"><h3 class="block-title">🇮🇳 मोबाइल का खतरा</h3><p>काम के दौरान फोन ध्यान भटकाता है। ऊंचाई पर फोन करने से गिरने का खतरा।</p></div><div class="content-block english"><h3 class="block-title">🇺🇸 Mobile Hazard</h3><p>Distraction causes accidents. Avoid phones near machinery.</p></div>`
+            },
+            'nasha': {
+                title: "🚭 नशा मुक्ति (No Smoking/Drugs)",
+                video: "no-smoking.mp4", // <-- यहाँ अपनी फाइल का नाम डालें
+                html: `<div class="content-block"><h3 class="block-title">🇮🇳 नशे के नुकसान</h3><p>सिगरेट का धुआं गर्भवती महिलाओं के लिए खतरनाक। नशे से दुर्घटनाएं बढ़ती हैं।</p></div><div class="content-block english"><h3 class="block-title">🇺🇸 Substance Abuse</h3><p>Smoking is strictly prohibited. It endangers pregnant women and safety.</p></div>`
+            },
+            'ppe': {
+                title: "⛑️ पीपीई और ऊंचाई (PPE & Height)",
+                video: "ppe-height.mp4", // <-- यहाँ अपनी फाइल का नाम डालें
+                html: `
+                    <div class="content-block">
+                        <h3 class="block-title">🇮🇳 पीपीई और ऊंचाई सुरक्षा (Hindi)</h3>
+                        <table class="data-table">
+                            <tr><th>सामान (Item)</th><th>उपयोग (Usage)</th></tr>
+                            <tr><td><b>हेलमेट (Helmet)</b></td><td>सिर की सुरक्षा। स्ट्रैप बांधना अनिवार्य।</td></tr>
+                            <tr><td><b>शूज (Safety Shoes)</b></td><td>पैरों की सुरक्षा। Steel toe वाले होने चाहिए।</td></tr>
+                            <tr><td><b>हार्नेस (Safety Belt)</b></td><td>ऊंचाई > 2 मीटर होने पर अनिवार्य।</td></tr>
+                        </table>
+                        <div class="warning-box">
+                            <strong>⚠️ विशेष सुरक्षा नियम:</strong>
+                            <ul class="checklist" style="margin-top:10px;">
+                                <li><strong>सेफ्टी बेल्ट पहनकर काम करें:</strong> ऊंचाई पर बिना बेल्ट के काम सख्त वर्जित है।</li>
+                                <li><strong>फोन पर बात न करें:</strong> काम के दौरान मोबाइल पर बातचीत बिल्कुल न करें।</li>
+                                <li><strong>कान में एयरपॉड न लगाएं:</strong> Airpods/Earphones से आप खतरे की आवाज नहीं सुन पाएंगे।</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content-block english">
+                        <h3 class="block-title">🇺🇸 PPE & Height Safety (English)</h3>
+                         <table class="data-table">
+                            <tr><th>Item</th><th>Usage</th></tr>
+                            <tr><td><b>Helmet</b></td><td>Head Protection. Strap mandatory.</td></tr>
+                            <tr><td><b>Safety Shoes</b></td><td>Foot Protection. Steel toe required.</td></tr>
+                            <tr><td><b>Harness</b></td><td>Mandatory if height > 2 meters.</td></tr>
+                        </table>
+                        <div class="warning-box" style="background:#e3f2fd; border-left-color:#2196f3;">
+                            <strong>⚠️ Special Rules:</strong>
+                            <ul class="checklist" style="margin-top:10px;">
+                                <li><strong>Wear Safety Belt:</strong> Working at height without belt is prohibited.</li>
+                                <li><strong>No Phone Calls:</strong> Do not talk on phone while working.</li>
+                                <li><strong>No Audio Devices:</strong> Do not use Airpods to hear warning sounds.</li>
+                            </ul>
+                        </div>
+                    </div>
+                `
+            }
+        };
+
+        // --- SCRIPT LOGIC ---
+        const modal = document.getElementById('myModal');
+        const videoFrame = document.getElementById('video-frame');
+        const localVideo = document.getElementById('local-video');
+        const videoSource = document.getElementById('video-source');
+        const infoArea = document.getElementById('info-area');
+        const modalTitle = document.getElementById('modal-title');
+
+        function openModal(type) {
+            const item = data[type];
+            if(!item) return;
+
+            modalTitle.innerText = item.title;
+            infoArea.innerHTML = item.html;
+
+            // Reset both players
+            videoFrame.style.display = 'none';
+            localVideo.style.display = 'none';
+            videoFrame.src = "";
+            localVideo.pause();
+
+            // Logic to check if file is MP4 or YouTube
+            if(item.video) {
+                if(item.video.includes(".mp4")) {
+                    // It is a local file
+                    videoSource.src = item.video;
+                    localVideo.style.display = 'block';
+                    localVideo.load(); // Load the video
+                } else {
+                    // It is a YouTube ID/Link
+                    videoFrame.style.display = 'block';
+                    videoFrame.src = "https://www.youtube.com/embed/" + item.video + "?rel=0";
+                }
+            }
+
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+            videoFrame.src = "";
+            localVideo.pause(); // Stop video on close
+        }
+
+        window.onclick = function(e) { if(e.target == modal) closeModal(); }
+    </script>
+</body>
+</html>
