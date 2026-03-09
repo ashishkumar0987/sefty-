@@ -43,7 +43,6 @@
         .card-badge { position: absolute; top: -25px; right: 25px; background: var(--dark); color: white; padding: 12px 20px; border-radius: 10px; font-weight: bold; font-size: 1.1rem; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
         
         .card-title { font-size: 1.6rem; margin: 10px 0; color: var(--dark); font-weight: 700; }
-        .card-desc { font-size: 0.95rem; color: #555; margin-bottom: 15px; }
 
         /* --- MODAL POPUP --- */
         .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); overflow-y: auto; animation: fadeIn 0.3s; }
@@ -60,7 +59,6 @@
         .video-container { position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.2); border: 5px solid white; background: #000; }
         .video-container iframe { width: 100%; height: 350px; border: none; display: block; }
         
-        /* LOCAL VIDEO STYLING (NEW ADDITION) */
         #local-video { width: 100%; height: 350px; background: #000; display: block; border-radius: 10px; }
 
         .content-block { background: white; padding: 25px; border-radius: 15px; margin-bottom: 25px; border-left: 6px solid var(--primary); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
@@ -76,20 +74,52 @@
 
         .warning-box { background: #fff3e0; border-left: 5px solid #ff9800; padding: 15px; margin-top: 15px; border-radius: 8px; }
         
+        .detail-text { font-size: 1rem; color: #444; margin-bottom: 15px; text-align: justify; }
+        
+        .emergency-box { background: linear-gradient(135deg, #ffebee, #ffcdd2); border: 2px solid var(--primary); padding: 20px; border-radius: 15px; margin-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .emergency-box h4 { margin: 0; color: var(--primary); font-size: 1.2rem; }
+        .emergency-no { font-size: 1.8rem; font-weight: 800; color: var(--dark); }
+        
+        .quote-box { background: #e8f5e9; border-left: 5px solid var(--success); padding: 20px; margin-top: 20px; border-radius: 8px; text-align: center; font-style: italic; }
+        .quote-text { font-size: 1.1rem; color: #2e7d32; font-weight: 600; }
+        .quote-author { font-size: 0.9rem; color: #555; margin-top: 5px; }
+
         .data-table { width: 100%; border-collapse: collapse; margin-top: 15px; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         .data-table th { background: var(--dark); color: white; padding: 15px; font-size: 1rem; text-align: left; }
         .data-table td { padding: 12px 15px; border: 1px solid #ddd; background: white; }
 
+        /* --- ARMY TRIBUTE SECTION --- */
+        .army-tribute {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,51,102,0.9)), url('240_F_628230329_xFdJj1C1bRMQuz7PNwemmpEYo6s6kbQ3.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            border-top-left-radius: 60px;
+            border-top-right-radius: 60px;
+            margin-top: 60px;
+            box-shadow: 0 -10px 40px rgba(0,0,0,0.5);
+            border-bottom: 8px solid #ff9933;
+        }
+        .army-badge { background: #fff; color: #002f6c; padding: 10px 30px; border-radius: 50px; font-size: 1.5rem; font-weight: bold; display: inline-block; margin-bottom: 25px; border: 2px solid #ff9933; }
+        .army-tribute h1 { margin: 0; font-size: 3rem; text-shadow: 2px 2px 0px #000; font-weight: 800; color: #fff; }
+        .army-subtitle { font-size: 1.5rem; margin-top: 15px; color: #ff9933; font-weight: 600; }
+        .army-content { max-width: 900px; margin: 40px auto 0; font-size: 1.2rem; line-height: 1.8; text-shadow: 1px 1px 2px #000; }
+        .army-salute { font-size: 4rem; margin-top: 30px; animation: salute 2s infinite; }
+        @keyframes salute { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+
+        footer { background: var(--dark); color: white; text-align: center; padding: 30px; font-size: 1.1rem; border-top: 5px solid var(--secondary); }
+
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         @keyframes slideDown { from { transform: translateY(-100px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-
-        footer { background: var(--dark); color: white; text-align: center; padding: 30px; margin-top: 50px; font-size: 1.1rem; border-top: 5px solid var(--secondary); }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="year-badge"> सुरक्षा दिवस 2026 (Safety Day 2026)</div>
+        <div class="year-badge">सुरक्षा दिवस 2026 (Safety Day 2026)</div>
         <h1>सुरक्षा का संकल्प, जीवन का विकास</h1>
         <div class="sub-title">Safety Commitment for Development</div>
     </header>
@@ -100,62 +130,74 @@
         </div>
 
         <div class="grid">
-            <!-- 1. FIRE -->
+            <!-- CARDS -->
             <div class="card fire-card" onclick="openModal('fire')">
                 <div class="card-badge" style="background:var(--primary);">🔥 अग्नि</div>
                 <img class="card-img" src="three.jpg" alt="Fire Safety">
                 <div class="card-content"><h2 class="card-title">अग्नि सुरक्षा (Fire Safety)</h2></div>
             </div>
 
-            <!-- 2. WOMEN -->
             <div class="card women-card" onclick="openModal('women')">
                 <div class="card-badge" style="background:var(--women);">👩‍💼 महिला</div>
                 <img class="card-img" src="Blog--05_2048x2048.webp" alt="Women Safety">
                 <div class="card-content"><h2 class="card-title">महिला सुरक्षा (Women Safety)</h2></div>
             </div>
 
-            <!-- 3. WELDER -->
             <div class="card" onclick="openModal('welder')" style="border-top: 5px solid var(--welder);">
                 <div class="card-badge" style="background:var(--welder);">🛡️ वेल्डर</div>
                 <img class="card-img" src="two.jpeg" alt="Welder Safety">
                 <div class="card-content"><h2 class="card-title">वेल्डर सुरक्षा</h2></div>
             </div>
 
-            <!-- 4. GRINDER -->
             <div class="card" onclick="openModal('grinder')" style="border-top: 5px solid var(--grinder);">
                 <div class="card-badge" style="background:var(--grinder);">⚙️ ग्राइंडर</div>
                 <img class="card-img" src="WhatsApp Image 2026-03-08 at 4.15.05 PM.jpeg" alt="Grinder Safety">
                 <div class="card-content"><h2 class="card-title">ग्राइंडर सुरक्षा</h2></div>
             </div>
 
-            <!-- 5. HELPER -->
             <div class="card" onclick="openModal('helper')" style="border-top: 5px solid var(--success);">
                 <div class="card-badge" style="background:var(--success);">👷 हेल्पर</div>
                 <img class="card-img" src="WhatsApp Image 2026-03-08 at 4.28.54 PM.jpeg" alt="Helper Safety">
                 <div class="card-content"><h2 class="card-title">हेल्पर सुरक्षा</h2></div>
             </div>
 
-            <!-- 6. MOBILE BAN -->
             <div class="card" onclick="openModal('mobile')" style="border-top: 5px solid var(--phone);">
                 <div class="card-badge" style="background:var(--phone);">📵 मोबाइल</div>
                 <img class="card-img" src="gettyimages-533228722-612x612.jpg" alt="Mobile Phone">
                 <div class="card-content"><h2 class="card-title">मोबाइल वर्जित</h2></div>
             </div>
 
-            <!-- 7. NASHA MUKTI -->
             <div class="card" onclick="openModal('nasha')" style="border-top: 5px solid var(--nasha);">
                 <div class="card-badge" style="background:var(--nasha);">🚭 नशा</div>
                 <img class="card-img" src="glass-whiskey-two-cigarettes-on-260nw-280869077.webp" alt="No Smoking">
                 <div class="card-content"><h2 class="card-title">नशा मुक्ति</h2></div>
             </div>
 
-            <!-- 8. PPE & HEIGHT -->
             <div class="card" onclick="openModal('ppe')" style="border-top: 5px solid var(--secondary);">
                 <div class="card-badge" style="background:var(--secondary);">⛑️ पीपीई</div>
                 <img class="card-img" src="WhatsApp Image 2026-03-08 at 4.22.05 PM.jpeg" alt="PPE">
                 <div class="card-content"><h2 class="card-title">पीपीई और ऊंचाई</h2></div>
             </div>
+        </div>
+    </div>
 
+    <!-- ARMY TRIBUTE SECTION -->
+    <div class="army-tribute">
+        <div class="army-badge">🇮🇳 भारतीय सेना (Indian Army)</div>
+        <h1>सीमा के रक्षक, राष्ट्र की शान</h1>
+        <div class="army-subtitle">वीरों को समर्पित यह अभियान</div>
+        
+        <div class="army-content">
+            <p>
+                "हम यहाँ सुरक्षा के नियमों की बात कर रहे हैं, क्योंकि हमारी सीमाओं पर <strong>भारतीय सेना</strong> अपनी जान की परवाह किए बिना तैनात है। जब वे बंदूक उठाते हैं, तभी हम सुरक्षित रूप से अपने काम को संभाल पाते हैं।"
+            </p>
+            <p>
+                हर सैनिक का सपना होता है कि उसका देश सुरक्षित रहे। औद्योगिक सुरक्षा का यह प्रयास उन वीर जवानों के सपने को पूरा करने में एक छोटा सा कदम है। सीमा पर उनकी चौकसी ही हमारी नींद की गारंटी है।
+            </p>
+        </div>
+        
+        <div style="margin-top: 40px; font-size: 1.1rem; color: #ccc;">
+            <em>जय हिंद | वंदे मातरम</em>
         </div>
     </div>
 
@@ -170,10 +212,7 @@
                 <div class="video-section">
                     <h3 style="margin-top:0;">🎬 वीडियो गाइड</h3>
                     <div class="video-container">
-                        <!-- YouTube Container -->
                         <iframe id="video-frame" style="display:none;" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        
-                        <!-- Local File Container (NEW) -->
                         <video id="local-video" controls style="display:none;">
                             <source id="video-source" src="" type="video/mp4">
                             आपका ब्राउज़र वीडियो सपोर्ट नहीं करता।
@@ -193,95 +232,235 @@
     </footer>
 
     <script>
-        // --- DATA ENGINE ---
-        // NOTE: 'video' में अपनी फाइल का नाम (जैसे fire.mp4) डालें। 
-        // फाइल उसी फोल्डर में होनी चाहिए जहाँ यह HTML फाइल है।
-        
+        // --- DATA ENGINE (DETAILED CONTENT) ---
         const data = {
             'fire': {
                 title: "🔥 अग्नि सुरक्षा (Fire Safety)",
-                video: "12730657-hd_1080_1920_30fps.mp4", // <-- यहाँ अपनी फाइल का नाम डालें
-                html: `<div class="content-block"><h3 class="block-title">🇮🇳 हिंदी में जानकारी</h3><p>आग के प्रकार और सिलेंडर का रंग कोड। Class A (लकड़ी) - लाल पानी, Class C (बिजली) - काला CO2।</p></div><div class="content-block english"><h3 class="block-title">🇺🇸 English Info</h3><p>Know your fire types. Never use water on electrical fires.</p></div>`
+                // YouTube Link या MP4 दोनों चलेंगे
+                video: "https://youtu.be/Vc7ZqtGNmTY", 
+                html: `
+                <div class="content-block">
+                    <h3 class="block-title">🇮🇳 अग्नि सुरक्षा: संपूर्ण मार्गदर्शिका</h3>
+                    <p class="detail-text">आग एक अच्छी सेवक है पर बुरा मालिक। औद्योगिक क्षेत्र में अग्नि सुरक्षा सबसे महत्वपूर्ण है। 'Fire Triangle' (ईंधन, ऑक्सीजन, गर्मी) को समझना प्राथमिकता है।</p>
+                    
+                    <h4 style="color:var(--dark);">🔥 आग के प्रकार और सिलेंडर का चयन:</h4>
+                    <table class="data-table">
+                        <tr><th>सिलेंडर प्रकार</th><th>रंग कोड</th><th>उपयोग (आग का प्रकार)</th></tr>
+                        <tr><td><b>पानी (Water)</b></td><td>🔴 लाल</td><td>Class A (लकड़ी, कपड़ा, कागज)</td></tr>
+                        <tr><td><b>फोम (Foam)</b></td><td>🟡 पीला/क्रीम</td><td>Class B (तेल, पेट्रोल, पेंट)</td></tr>
+                        <tr><td><b>DCP (Powder)</b></td><td>🔵 नीला</td><td>Class B & C (तरल पदार्थ और गैस)</td></tr>
+                        <tr><td><b>CO2</b></td><td>⚫ काला</td><td>Class C (बिजली, इलेक्ट्रॉनिक्स)</td></tr>
+                    </table>
+
+                    <div class="warning-box">
+                        <strong>⚠️ सुरक्षा टिप्स (PASS Method):</strong>
+                        <ul class="checklist">
+                            <li><strong>P (Pull):</strong> पिन को बाहर निकालें।</li>
+                            <li><strong>A (Aim):</strong> सिलेंडर की नोजल आग के नीचे की ओर रखें।</li>
+                            <li><strong>S (Squeeze):</strong> लीवर को दबाएं।</li>
+                            <li><strong>S (Sweep):</strong> आग के आधार को झाड़ू की तरह स्वीप करें।</li>
+                        </ul>
+                    </div>
+
+                    <div class="emergency-box">
+                        <div><h4>🚑 फायर ब्रिगेड / एम्बुलेंस</h4></div>
+                        <div class="emergency-no">101 / 108</div>
+                    </div>
+                    
+                    <div class="quote-box">
+                        <div class="quote-text">"सावधानी हटे, तो आग फैले। सतर्क रहें, तो जान बचाए।"</div>
+                    </div>
+                </div>`
             },
             'women': {
                 title: "👩‍💼 महिला सुरक्षा (Women Safety)",
-                video: "147214-791333978_medium.mp4", // <-- यहाँ अपनी फाइल का नाम डालें
-                html: `<div class="content-block"><h3 class="block-title">🇮🇳 कानूनी अधिकार</h3><p>POSH Act, ICC Committee और सुरक्षित परिवहन के नियम।</p></div><div class="content-block english"><h3 class="block-title">🇺🇸 Legal Rights</h3><p>Workplace safety and harassment laws.</p></div>`
+                video: "https://youtu.be/ffBo2Gg-5as", // Example Link
+                html: `
+                <div class="content-block">
+                    <h3 class="block-title">🇮🇳 कार्यस्थल पर महिला सुरक्षा अधिकार</h3>
+                    <p class="detail-text">महिलाओं की सुरक्षा केवल कानूनी जिम्मेदारी नहीं, बल्कि एक नैतिक कर्तव्य है। POSH Act 2013 के तहत हर महिला कर्मचारी को सुरक्षित वातावरण का अधिकार है।</p>
+                    
+                    <div class="warning-box">
+                        <strong>⚖️ कानूनी अधिकार (POSH Act):</strong>
+                        <ul class="checklist">
+                            <li><strong>ICC Committee:</strong> 10 से ज्यादा कर्मचारियों वाली कंपनी में 'Internal Complaints Committee' का होना अनिवार्य है।</li>
+                            <li><strong>शिफ्ट टाइम:</strong> रात की शिफ्ट (7 PM - 6 AM) में महिलाओं को सुरक्षित परिवहन (GPS वाली कार) की सुविधा देना अनिवार्य।</li>
+                            <li><strong>शिकायत दर्ज:</strong> किसी भी छेड़छाड़ की शिकायत 3 महीने के अंदर ICC को लिखित में दी जा सकती है।</li>
+                        </ul>
+                    </div>
+
+                    <div class="emergency-box">
+                        <div><h4>🆘 Women Helpline / Police</h4></div>
+                        <div class="emergency-no">181 / 1091 / 112</div>
+                    </div>
+                    
+                    <div class="quote-box">
+                        <div class="quote-text">"जब महिला सुरक्षित होगी, तो परिवार सशक्त होगा और समाज विकसित होगा।"</div>
+                    </div>
+                </div>`
             },
             'welder': {
                 title: "🛡️ वेल्डर सुरक्षा (Welder Safety)",
-                video: "welder-video.mp4", // <-- यहाँ अपनी फाइल का नाम डालें
-                html: `<div class="content-block"><h3 class="block-title">🇮🇳 वेल्डिंग के खतरे</h3><ul class="checklist"><li><strong>गॉगल्स:</strong> आंखों को चमक से बचाएं।</li><li><strong>दस्ताने:</strong> चमड़े के दस्ताने पहनें।</li></ul></div><div class="content-block english"><h3 class="block-title">🇺🇸 Welding Hazards</h3><p>Use correct shade goggles and leather gloves.</p></div>`
+                video: "https://youtu.be/vj_2LbGx1RA",
+                html: `
+                <div class="content-block">
+                    <h3 class="block-title">🇮🇳 वेल्डिंग कार्य के दौरान सुरक्षा</h3>
+                    <p class="detail-text">वेल्डिंग करते समय हजारों डिग्री का तापमान और हानिकारक धुआं (Fumes) निकलता है। 'Arc Eye' (आंखों में जलन) और त्वचा का कैंसर आम खतरे हैं।</p>
+                    
+                    <table class="data-table">
+                        <tr><th>खतरा (Hazard)</th><th>सुरक्षा उपाय (Prevention)</th></tr>
+                        <tr><td><b>आंखों की रोशनी</b></td><td>ISI मार्क वाला Helmet और सही नंबर का Filter Glass (Shade 9-12) पहनें।</td></tr>
+                        <tr><td><b>त्वचा जलना</b></td><td>चमड़े के एप्रॉन, Hand Gloves और Safety Shoes पहनें। सिंथेटिक कपड़े न पहनें।</td></tr>
+                        <tr><td><b>धुआं/गैस</b></td><td>कमरे में वेंटिलेशन (Exhaust Fan) जरूर रखें।</td></tr>
+                    </table>
+
+                    <div class="warning-box">
+                        <strong>⚠️ विशेष सावधानी:</strong>
+                        <ul class="checklist">
+                            <li>वेल्डिंग के दौरान आसपास ज्वलनशील पदार्थ (Oil, Paper) न रखें।</li>
+                            <li>काम खत्म होने के 30 मिनट बाद तक चिंगारी गिरने का ख्याल रखें।</li>
+                        </ul>
+                    </div>
+                </div>`
             },
             'grinder': {
                 title: "⚙️ ग्राइंडर सुरक्षा (Grinder Safety)",
-                video: "grinder-video.mp4", // <-- यहाँ अपनी फाइल का नाम डालें
-                html: `<div class="content-block"><h3 class="block-title">🇮🇳 ग्राइंडर नियम</h3><ul class="checklist"><li><strong>Ring Test:</strong> पहिया चेक करें।</li><li><strong>Guard:</strong> गार्ड लगाएं।</li></ul></div><div class="content-block english"><h3 class="block-title">🇺🇸 Grinder Rules</h3><p>Check wheel for cracks and use guards.</p></div>`
+                video: "https://youtu.be/3zZOKIjGpxU",
+                html: `
+                <div class="content-block">
+                    <h3 class="block-title">🇮🇳 ग्राइंडर (चक्की) संचालन सुरक्षा</h3>
+                    <p class="detail-text">ग्राइंडर सबसे खतरनाक उपकरणों में से एक है। घूर्णन करते हुए पहिये (Wheel) का टूटना या कपड़ों का फंसना घातक हो सकता है।</p>
+                    
+                    <ul class="checklist">
+                        <li><strong>Ring Test (ध्वनि परीक्षण):</strong> नया पहिया लगाने से पहले उसे लटकाकर हल्के से पीटें। अगर धातु जैसी आवाज नहीं आती, तो वह टूटा हुआ है, उपयोग न करें।</li>
+                        <li><strong>Guard (ढक्कन):</strong> पहिये पर ढक्कन लगाना अनिवार्य है, यह टूटे हुए टुकड़ों से बचाता है।</li>
+                        <li><strong>Tool Rest:</strong> पहिये के नीचे वाला स्टैंड (Rest) 3mm की दूरी पर होना चाहिए।</li>
+                        <li><strong>RPM Check:</strong> ग्राइंडर की स्पीड (RPM) पहिये की स्पीड से ज्यादा नहीं होनी चाहिए।</li>
+                    </ul>
+
+                    <div class="quote-box">
+                        <div class="quote-text">"जल्दबाजी में काम करना, जान गंवाना। सुरक्षा से काम करना, खुशहाल रहना।"</div>
+                    </div>
+                </div>`
             },
             'helper': {
                 title: "👷 हेल्पर सुरक्षा (Helper Safety)",
-                video: "helper-video.mp4", // <-- यहाँ अपनी फाइल का नाम डालें
-                html: `<div class="content-block"><h3 class="block-title">🇮🇳 हेल्पर की जिम्मेदारियां</h3><ul class="checklist"><li>घुटनों से झुककर वजन उठाएं।</li><li>काम की जगह साफ रखें।</li></ul></div><div class="content-block english"><h3 class="block-title">🇺🇸 Helper Duties</h3><p>Safe lifting techniques and housekeeping.</p></div>`
+                video: "WhatsApp Video 2026-03-05 at 11.39.45 AM.mp4",
+                html: `
+                <div class="content-block">
+                    <h3 class="block-title">🇮🇳 हेल्पर/मजदूर सुरक्षा नियम</h3>
+                    <p class="detail-text">हेल्पर किसी भी उद्योग की रीढ़ होते हैं। उन्हें भारी वजन उठाने, ऊंचाई पर काम करने और गंदे वातावरण में काम करना पड़ता है।</p>
+                    
+                    <div class="warning-box">
+                        <strong>🏋️ वजन उठाने की तकनीक (Manual Handling):</strong>
+                        <ul class="checklist">
+                            <li><strong>झुककर न उठाएं:</strong> पीठ की बजाय घुटनों के बल बैठकर वजन उठाएं।</li>
+                            <li><strong>पीठ सीधी रखें:</strong> वजन शरीर के करीब रखें।</li>
+                            <li><strong>Housekeeping:</strong> काम की जगह हमेशा साफ रखें (5S Rule)। तेल या पानी गिरा हो तो तुरंत साफ करें।</li>
+                            <li><strong>PPE:</strong> हेलमेट और Safety Shoes पहनना ही नहीं, उनकी जिंदगी बचाना है।</li>
+                        </ul>
+                    </div>
+                </div>`
             },
             'mobile': {
                 title: "📵 मोबाइल वर्जित (Mobile Phone Ban)",
-                video: "mobile-ban.mp4", // <-- यहाँ अपनी फाइल का नाम डालें
-                html: `<div class="content-block"><h3 class="block-title">🇮🇳 मोबाइल का खतरा</h3><p>काम के दौरान फोन ध्यान भटकाता है। ऊंचाई पर फोन करने से गिरने का खतरा।</p></div><div class="content-block english"><h3 class="block-title">🇺🇸 Mobile Hazard</h3><p>Distraction causes accidents. Avoid phones near machinery.</p></div>`
+                video: "https://youtu.be/YbUM-HEOy_Y",
+                html: `
+                <div class="content-block">
+                    <h3 class="block-title">🇮🇳 कार्यस्थल पर मोबाइल: एक खतरनाक ध्यान भंग</h3>
+                    <p class="detail-text">औद्योगिक क्षेत्र में मोबाइल फोन सिर्फ communication का साधन नहीं है, बल्कि यह एक गंभीर <strong>'विकर्षण' (Distraction)</strong> है। एक सेकंड की असावधानी जीवन भर का पछतावा दे सकती है।</p>
+                    
+                    <div class="warning-box">
+                        <strong>⚠️ प्रमुख खतरे:</strong>
+                        <ul class="checklist">
+                            <li><strong>मशीन के पास:</strong> फोन पर ध्यान देने से कपड़े, स्कार्फ या हाथ मशीन में फंस सकते हैं।</li>
+                            <li><strong>ऊंचाई पर:</strong> सेल्फी लेते या बात करते समय संतुलन बिगड़ने का 90% खतरा होता है।</li>
+                            <li><strong>वाहन चलाते समय:</strong> फोर्कलिफ्ट या क्रेन चलाते समय फोन जानलेवा साबित होता है।</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="quote-box">
+                        <div class="quote-text">"काम के समय काम, फोन का काम बाद में। जान है तो जहान है।"</div>
+                    </div>
+                </div>`
             },
             'nasha': {
                 title: "🚭 नशा मुक्ति (No Smoking/Drugs)",
-                video: "no-smoking.mp4", // <-- यहाँ अपनी फाइल का नाम डालें
-                html: `<div class="content-block"><h3 class="block-title">🇮🇳 नशे के नुकसान</h3><p>सिगरेट का धुआं गर्भवती महिलाओं के लिए खतरनाक। नशे से दुर्घटनाएं बढ़ती हैं।</p></div><div class="content-block english"><h3 class="block-title">🇺🇸 Substance Abuse</h3><p>Smoking is strictly prohibited. It endangers pregnant women and safety.</p></div>`
+                video: "https://youtu.be/gDMw3sBHXao",
+                html: `
+                <div class="content-block">
+                    <h3 class="block-title">🇮🇳 नशा मुक्त कार्यस्थल (Addiction Free Zone)</h3>
+                    <p class="detail-text">नशा (शराब, तंबाकू, गांजा) करने वाला कर्मचारी खुद के साथ-साथ संगठन के लिए भी खतरा है। नशे की स्थिति में फैसले लेने की क्षमता और reaction time बहुत धीमा हो जाता है।</p>
+                    
+                    <div class="warning-box">
+                        <strong>🚯 नुकसान:</strong>
+                        <ul class="checklist">
+                            <li><strong>सिगरेट का धुआं:</strong> यह गर्भवती महिलाओं और अस्थमा रोगियों के लिए जहर है।</li>
+                            <li><strong>दुर्घटनाएं:</strong> 30% से ज्यादा औद्योगिक दुर्घटनाएं नशे की स्थिति में होती हैं।</li>
+                            <li><strong>अनुशासनहीनता:</strong> नशेड़ी कर्मचारी काम में गलतियां करता है और उत्पादन पर बुरा असर डालता है।</li>
+                        </ul>
+                    </div>
+
+                    <div class="emergency-box">
+                        <div><h4>🚫 Nasha Mukti Helpline</h4></div>
+                        <div class="emergency-no">1800-11-0031</div>
+                    </div>
+                </div>`
             },
             'ppe': {
                 title: "⛑️ पीपीई और ऊंचाई (PPE & Height)",
-                video: "ppe-height.mp4", // <-- यहाँ अपनी फाइल का नाम डालें
+                video: "https://youtu.be/Kp9SgybH9q0",
                 html: `
-                    <div class="content-block">
-                        <h3 class="block-title">🇮🇳 पीपीई और ऊंचाई सुरक्षा (Hindi)</h3>
-                        <table class="data-table">
-                            <tr><th>सामान (Item)</th><th>उपयोग (Usage)</th></tr>
-                            <tr><td><b>हेलमेट (Helmet)</b></td><td>सिर की सुरक्षा। स्ट्रैप बांधना अनिवार्य।</td></tr>
-                            <tr><td><b>शूज (Safety Shoes)</b></td><td>पैरों की सुरक्षा। Steel toe वाले होने चाहिए।</td></tr>
-                            <tr><td><b>हार्नेस (Safety Belt)</b></td><td>ऊंचाई > 2 मीटर होने पर अनिवार्य।</td></tr>
-                        </table>
-                        <div class="warning-box">
-                            <strong>⚠️ विशेष सुरक्षा नियम:</strong>
-                            <ul class="checklist" style="margin-top:10px;">
-                                <li><strong>सेफ्टी बेल्ट पहनकर काम करें:</strong> ऊंचाई पर बिना बेल्ट के काम सख्त वर्जित है।</li>
-                                <li><strong>फोन पर बात न करें:</strong> काम के दौरान मोबाइल पर बातचीत बिल्कुल न करें।</li>
-                                <li><strong>कान में एयरपॉड न लगाएं:</strong> Airpods/Earphones से आप खतरे की आवाज नहीं सुन पाएंगे।</li>
-                            </ul>
-                        </div>
+                <div class="content-block">
+                    <h3 class="block-title">🇮🇳 पीपीई (PPE) और ऊंचाई पर कार्य</h3>
+                    <p class="detail-text">PPE (Personal Protective Equipment) आपकी आखिरी सुरक्षा पंक्ति है। ऊंचाई पर काम करते समय एक छोटी सी गलती जानलेवा हो सकती है।</p>
+                    
+                    <table class="data-table">
+                        <tr><th>सामान (Item)</th><th>उपयोग और महत्व (Usage)</th></tr>
+                        <tr><td><b>हेलमेट (Helmet)</b></td><td>सिर की सुरक्षा। Chin Strap बांधना अनिवार्य।</td></tr>
+                        <tr><td><b>शूज (Safety Shoes)</b></td><td>पैरों की सुरक्षा। Steel toe वाले होने चाहिए।</td></tr>
+                        <tr><td><b>हार्नेस (Safety Belt)</b></td><td>ऊंचाई > 2 मीटर (6 फीट) होने पर अनिवार्य।</td></tr>
+                        <tr><td><b>गॉगल्स</b></td><td>धूल, चमक और केमिकल से आंखों की सुरक्षा।</td></tr>
+                    </table>
+                    
+                    <div class="warning-box">
+                        <strong>⚠️ विशेष सुरक्षा नियम:</strong>
+                        <ul class="checklist">
+                            <li><strong>सेफ्टी बेल्ट:</strong> ऊंचाई पर बिना बेल्ट के काम सख्त वर्जित। बेल्ट को मजबूत आधार (Anchor) से बांधें।</li>
+                            <li><strong>मोबाइल/Earphones:</strong> Airpods से आप सायरन या हॉर्न की आवाज नहीं सुन पाएंगे, यह खतरनाक है।</li>
+                        </ul>
                     </div>
-                    <div class="content-block english">
-                        <h3 class="block-title">🇺🇸 PPE & Height Safety (English)</h3>
-                         <table class="data-table">
-                            <tr><th>Item</th><th>Usage</th></tr>
-                            <tr><td><b>Helmet</b></td><td>Head Protection. Strap mandatory.</td></tr>
-                            <tr><td><b>Safety Shoes</b></td><td>Foot Protection. Steel toe required.</td></tr>
-                            <tr><td><b>Harness</b></td><td>Mandatory if height > 2 meters.</td></tr>
-                        </table>
-                        <div class="warning-box" style="background:#e3f2fd; border-left-color:#2196f3;">
-                            <strong>⚠️ Special Rules:</strong>
-                            <ul class="checklist" style="margin-top:10px;">
-                                <li><strong>Wear Safety Belt:</strong> Working at height without belt is prohibited.</li>
-                                <li><strong>No Phone Calls:</strong> Do not talk on phone while working.</li>
-                                <li><strong>No Audio Devices:</strong> Do not use Airpods to hear warning sounds.</li>
-                            </ul>
-                        </div>
+
+                    <div class="quote-box">
+                        <div class="quote-text">"पीपीई आपके घर वापस जाने का टिकट है, इसे कभी हल्के में न लें।"</div>
                     </div>
-                `
+                </div>`
             }
         };
 
-        // --- SCRIPT LOGIC ---
+        // --- SCRIPT LOGIC (VIDEO FIX APPLIED) ---
         const modal = document.getElementById('myModal');
         const videoFrame = document.getElementById('video-frame');
         const localVideo = document.getElementById('local-video');
         const videoSource = document.getElementById('video-source');
         const infoArea = document.getElementById('info-area');
         const modalTitle = document.getElementById('modal-title');
+
+        // Helper function to extract YouTube ID from URL
+        function getYouTubeID(url) {
+            if (!url) return null;
+            // Check if it's a direct ID (11 chars, alphanumeric/underscore/dash)
+            if (/^[a-zA-Z0-9_-]{11}$/.test(url)) return url;
+            
+            // Regex for various YouTube URL formats
+            const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+            const match = url.match(regExp);
+            
+            if (match && match[2].length === 11) {
+                return match[2];
+            }
+            return null;
+        }
 
         function openModal(type) {
             const item = data[type];
@@ -296,17 +475,19 @@
             videoFrame.src = "";
             localVideo.pause();
 
-            // Logic to check if file is MP4 or YouTube
             if(item.video) {
                 if(item.video.includes(".mp4")) {
                     // It is a local file
                     videoSource.src = item.video;
                     localVideo.style.display = 'block';
-                    localVideo.load(); // Load the video
+                    localVideo.load();
                 } else {
-                    // It is a YouTube ID/Link
-                    videoFrame.style.display = 'block';
-                    videoFrame.src = "https://www.youtube.com/embed/" + item.video + "?rel=0";
+                    // It is a YouTube Link
+                    const videoID = getYouTubeID(item.video);
+                    if(videoID) {
+                        videoFrame.style.display = 'block';
+                        videoFrame.src = "https://www.youtube.com/embed/" + videoID + "?rel=0&autoplay=0";
+                    }
                 }
             }
 
@@ -316,7 +497,7 @@
         function closeModal() {
             modal.style.display = 'none';
             videoFrame.src = "";
-            localVideo.pause(); // Stop video on close
+            localVideo.pause();
         }
 
         window.onclick = function(e) { if(e.target == modal) closeModal(); }
